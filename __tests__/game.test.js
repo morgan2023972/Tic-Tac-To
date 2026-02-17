@@ -1,9 +1,15 @@
-const { createBoard, applyMove, checkWin, isDraw, formatBoard } = require('../game');
+const {
+  createBoard,
+  applyMove,
+  checkWin,
+  isDraw,
+  formatBoard,
+} = require('../game');
 
 test('createBoard returns 9 nulls', () => {
   const b = createBoard();
   expect(b).toHaveLength(9);
-  expect(b.every(x => x === null)).toBe(true);
+  expect(b.every((x) => x === null)).toBe(true);
 });
 
 test('applyMove succeeds on empty cell and is non-mutating', () => {
@@ -25,12 +31,12 @@ test('applyMove fails on occupied cell', () => {
 });
 
 test('checkWin detects horizontal win', () => {
-  const b = ['X','X','X', null, null, null, null, null, null];
+  const b = ['X', 'X', 'X', null, null, null, null, null, null];
   expect(checkWin(b)).toBe('X');
 });
 
 test('isDraw detects full board without winner', () => {
-  const b = ['X','O','X','X','O','O','O','X','X'];
+  const b = ['X', 'O', 'X', 'X', 'O', 'O', 'O', 'X', 'X'];
   expect(isDraw(b)).toBe(true);
 });
 

@@ -1,10 +1,19 @@
 const readline = require('readline');
-const { createBoard, printBoard, applyMove, checkWin, isDraw } = require('./game');
+const {
+  createBoard,
+  printBoard,
+  applyMove,
+  checkWin,
+  isDraw,
+} = require('./game');
 
-const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
 function question(prompt) {
-  return new Promise(resolve => rl.question(prompt, resolve));
+  return new Promise((resolve) => rl.question(prompt, resolve));
 }
 
 async function main() {
@@ -23,7 +32,11 @@ async function main() {
     // Use non-mutating applyMove and update board on success
     const res = applyMove(board, pos, current);
     if (!res.ok) {
-      console.log(res.reason === 'occupied' ? 'Coup invalide: case occupée.' : 'Coup invalide: hors limites.');
+      console.log(
+        res.reason === 'occupied'
+          ? 'Coup invalide: case occupée.'
+          : 'Coup invalide: hors limites.'
+      );
       continue;
     }
     // replace board with new immutable board
@@ -45,4 +58,7 @@ async function main() {
   rl.close();
 }
 
-main().catch(err => { console.error(err); rl.close(); });
+main().catch((err) => {
+  console.error(err);
+  rl.close();
+});

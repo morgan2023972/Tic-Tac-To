@@ -1,7 +1,7 @@
-import js from "@eslint/js";
-import globals from "globals";
-import prettier from "eslint-config-prettier";
-import pluginPrettier from "eslint-plugin-prettier";
+import js from '@eslint/js';
+import globals from 'globals';
+import prettier from 'eslint-config-prettier';
+import pluginPrettier from 'eslint-plugin-prettier';
 
 export default [
   // Règles recommandées d'ESLint
@@ -11,27 +11,27 @@ export default [
   prettier,
 
   {
-    files: ["**/*.js"],
+    files: ['**/*.js'],
 
     plugins: {
-      prettier: pluginPrettier
+      prettier: pluginPrettier,
     },
 
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "script", // Projet en CommonJS
+      ecmaVersion: 'latest',
+      sourceType: 'script', // Projet en CommonJS
       globals: {
         ...globals.node,
-        ...globals.jest
-      }
+        ...globals.jest,
+      },
     },
 
     rules: {
-      "no-unused-vars": "warn",
-      "no-undef": "error",
+      'no-unused-vars': 'warn',
+      'no-undef': 'error',
 
       // Active Prettier comme règle ESLint
-      "prettier/prettier": "error"
-    }
-  }
+      'prettier/prettier': 'error',
+    },
+  },
 ];

@@ -3,6 +3,7 @@
 Ce fichier décrit l'API fournie par le module `game.js` du projet Tic‑Tac‑Toe.
 
 Invariants
+
 - Le plateau (`board`) est un tableau de 9 éléments : indices 0..8.
 - Valeurs attendues : `null` pour case vide, ou `'X'` / `'O'` pour une case occupée.
 
@@ -47,19 +48,25 @@ else board = res.board;
    - Description : affiche le plateau en console; appelle `formatBoard`.
    - Signature : `(Array) => void`
 
-4. `checkWin(board)`
+7. `checkWin(board)`
    - Description : détecte un gagnant. Parcourt les 8 lignes gagnantes classiques.
    - Signature : `(Array) => null | "X" | "O"`
    - Retour : `'X'` ou `'O'` si victoire, `null` sinon.
 
-5. `isDraw(board)`
+8. `isDraw(board)`
    - Description : indique si la partie est nulle (toutes les cases occupées et pas de gagnant).
    - Signature : `(Array) => boolean`
 
 Utilisation rapide
 
 ```js
-const { createBoard, printBoard, makeMove, checkWin, isDraw } = require('../game');
+const {
+  createBoard,
+  printBoard,
+  makeMove,
+  checkWin,
+  isDraw,
+} = require('../game');
 const board = createBoard();
 makeMove(board, 0, 'X');
 makeMove(board, 4, 'O');
@@ -70,6 +77,7 @@ else if (isDraw(board)) console.log('Match nul');
 ```
 
 Suggestions d'amélioration (notes de maintenance)
+
 - `makeMove` mutate le plateau : envisager une version non mutante qui retourne `{ ok, board, reason? }` pour faciliter les tests.
 - Ajouter une fonction `formatBoard(board)` qui retourne une `string` (séparation affichage/logique) pour mieux tester l'affichage.
 - Détailler les erreurs en renvoyant un objet au lieu d'un `boolean` pour améliorer le feedback côté CLI.

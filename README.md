@@ -1,13 +1,14 @@
-# Tic‑Tac‑Toe (Morpion) — CLI
+# Tic‑Tac‑To (Morpion) — CLI
 
-![CI](https://github.com/<TON-USER>/<TON-REPO>/actions/workflows/ci.yml/badge.svg)
-
+[![CI - Lint, Prettier & Tests](https://github.com/morgan2023972/Tic-Tac-To/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/morgan2023972/Tic-Tac-To/actions/workflows/ci.yml)
 Jeu simple de morpion en ligne de commande (Node.js).
 
 Prérequis
+
 - Node.js 18+
 
 Installation et exécution
+
 1. Ouvrez un terminal dans le dossier du projet.
 2. Lancez :
 
