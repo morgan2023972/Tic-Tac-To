@@ -1,6 +1,6 @@
 # Tic‑Tac‑Toe (Morpion) — CLI
 
-[![Node.js CI](https://github.com/morgan2023972/Tic-Tac-To/actions/workflows/nodejs.yml/badge.svg)](https://github.com/morgan2023972/Tic-Tac-To/actions/workflows/nodejs.yml)
+![CI](https://github.com/<TON-USER>/<TON-REPO>/actions/workflows/ci.yml/badge.svg)
 
 Jeu simple de morpion en ligne de commande (Node.js).
 
